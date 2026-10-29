@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ===== Bagian HEAD: info halaman, font, dan file CSS ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bagus Pribadi | Guru DKV & Full Stack Developer</title>
+  <meta name="description" content="Portofolio Bagus Pribadi, Guru DKV dan Full Stack Developer.">
+
+  <!-- Google Fonts: Silkscreen (huruf piksel untuk nama) + Inter (teks biasa) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER: prompt terminal + menu navigasi ===== -->
+  <header class="header">
+    <p class="prompt">&gt;_ bagus@dkv:~$<span class="cursor">_</span></p>
+    <nav class="nav">
+      <a href="#beranda" class="nav-link">Beranda</a>
+      <a href="#tentang" class="nav-link">Tentang</a>
+      <a href="#karya" class="nav-link">Karya</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO / BERANDA ===== -->
+    <section id="beranda" class="section hero">
+      <h1 class="hero-name">Bagus Pribadi</h1>
+      <h2 class="hero-role">Guru DKV &amp; Full Stack Developer</h2>
+
+      <div class="hero-body">
+        <div class="hero-text">
+          <p>
+            Merancang karya visual sekaligus membangun sistem dari ruang kelas
+            desain komunikasi visual sampai ke baris kode aplikasi sekolah.
+          </p>
+          <!-- Ganti file PDF di folder assets dengan portofolio asli -->
+          <a href="assets/portofolio.pdf" class="btn-outline" download>
+            [ DOWNLOAD PORTOFOLIO ]
+          </a>
+        </div>
+
+        <!-- Simpan foto kamu sebagai assets/foto.png -->
+        <div class="hero-photo">
+          <img src="assets/foto.png" alt="Foto Bagus Pribadi">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ME / TENTANG ===== -->
+    <section id="tentang" class="section">
+      <h3 class="section-title">/About Me</h3>
+      <p class="about-text">
+        Lulusan Teknik Informatika yang kini mengajar Desain Komunikasi Visual
+        di SMK, sekaligus aktif mengembangkan aplikasi web untuk kebutuhan
+        sekolah dan yayasan.
+      </p>
+
+      <!-- Daftar skill: tinggal tambah/hapus <li> -->
+      <ul class="skills">
+        <li>Illustrator</li>
+        <li>UI/UX Design</li>
+        <li>Laravel</li>
+        <li>PHP</li>
+        <li>Linux</li>
+        <li>Network</li>
+        <li>CMS</li>
+        <li>HRIS</li>
+      </ul>
+    </section>
+
+    <!-- ===== PORTOFOLIO / KARYA ===== -->
+    <section id="karya" class="section">
+      <h3 class="section-title">/Portofolio</h3>
+
+      <!-- Kartu-kartu ini dibuat otomatis oleh script.js dari data "karya" -->
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+
+      <!-- ===== CONTACT / KONTAK ===== -->
+      <h3 id="kontak" class="section-title contact-title">/Contact</h3>
+      <div class="contact-card">
+        <a href="mailto:email@contoh.com" class="contact-item">
+          <span class="contact-label">email</span> email@contoh.com
+        </a>
+        <a href="https://github.com/username" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">github</span> github.com/username
+        </a>
+        <a href="https://instagram.com/username" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">instagram</span> @username
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="tahun"></span> Bagus Pribadi. Dibuat dengan HTML, CSS &amp; JS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

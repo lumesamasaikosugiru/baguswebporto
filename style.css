@@ -1,0 +1,256 @@
+/* =========================================================
+   1. VARIABEL WARNA & UKURAN
+   Ubah di sini, seluruh halaman ikut berubah.
+   ========================================================= */
+:root {
+  --bg: #1c1c2e;          /* latar gelap utama */
+  --bar: #d9d4d4;         /* latar header abu terang */
+  --red: #e8303a;         /* merah aksen (nama & lingkaran foto) */
+  --text: #e6e6ea;        /* teks terang */
+  --muted: #c9c9d1;       /* teks paragraf */
+  --card: #d9d9d9;        /* kartu placeholder */
+  --line: #6b6b7b;        /* garis pemisah section */
+  --radius: 10px;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-pixel: "Silkscreen", monospace;
+}
+
+/* =========================================================
+   2. RESET DASAR
+   ========================================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }          /* gulir halus saat klik menu */
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* =========================================================
+   3. HEADER & NAVIGASI
+   ========================================================= */
+.header {
+  background: var(--bar);
+  padding: 16px 8px 8px;
+  position: sticky;            /* menu tetap terlihat saat digulir */
+  top: 0;
+  z-index: 10;
+}
+
+.prompt {
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+/* kursor berkedip ala terminal */
+.cursor { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.nav { display: flex; flex-wrap: wrap; gap: 14px; }
+
+.nav-link {
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background .2s, transform .2s;
+}
+.nav-link:hover,
+.nav-link.active { background: var(--red); transform: translateY(-2px); }
+
+/* =========================================================
+   4. SECTION UMUM
+   ========================================================= */
+.section {
+  padding: 16px 12px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.section:last-of-type { border-bottom: none; }
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  scroll-margin-top: 110px;    /* jarak agar judul tidak tertutup header */
+}
+
+section { scroll-margin-top: 100px; }
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+.hero-name {
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  color: var(--red);
+  font-size: clamp(34px, 11vw, 64px);   /* ukuran menyesuaikan layar */
+  line-height: 1.05;
+  letter-spacing: 1px;
+}
+
+.hero-role { font-size: 15px; font-weight: 700; margin: 4px 0 6px; }
+
+.hero-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-text { flex: 1; }
+.hero-text p { color: var(--muted); font-size: 14px; margin-bottom: 18px; padding-left: 2px; }
+
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid var(--text);
+  border-radius: 8px;
+  padding: 8px 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  transition: background .2s, color .2s;
+}
+.btn-outline:hover { background: var(--text); color: var(--bg); }
+
+.hero-photo {
+  width: 148px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--red);
+  overflow: hidden;
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================================
+   6. ABOUT & SKILL
+   ========================================================= */
+.about-text { color: var(--muted); font-size: 14px; padding-left: 4px; margin-bottom: 14px; }
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 10px;
+}
+.skills li {
+  border: 1px solid var(--text);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color .2s, color .2s;
+}
+.skills li:hover { border-color: var(--red); color: var(--red); }
+
+/* =========================================================
+   7. PORTOFOLIO
+   ========================================================= */
+.portfolio-grid {
+  display: grid;
+  gap: 8px;
+  padding: 0 7px;
+  margin-bottom: 18px;
+}
+
+.card {
+  background: var(--card);
+  color: var(--bg);
+  border-radius: var(--radius);
+  min-height: 134px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 0 var(--red); }
+
+.card img { height: 160px; object-fit: cover; }
+
+.card-body { padding: 12px 14px; }
+.card-body h4 { font-size: 16px; margin-bottom: 4px; }
+.card-body p { font-size: 13px; }
+.card-tag {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--bg);
+  color: var(--text);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* kartu "..." = lihat karya lain */
+.card-more {
+  justify-content: center;
+  padding-left: 12px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =========================================================
+   8. KONTAK
+   ========================================================= */
+.contact-title { margin-top: 4px; }
+
+.contact-card {
+  background: var(--card);
+  color: var(--bg);
+  border-radius: var(--radius);
+  margin: 0 7px;
+  padding: 14px;
+  min-height: 68px;
+  display: grid;
+  gap: 8px;
+}
+.contact-item { font-size: 14px; font-weight: 600; }
+.contact-item:hover { color: var(--red); }
+.contact-label {
+  display: inline-block;
+  min-width: 80px;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+}
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--line);
+  padding: 20px 12px 28px;
+}
+
+/* =========================================================
+   10. RESPONSIF
+   Desain Figma untuk HP; di layar lebar konten dibatasi
+   lebarnya dan kartu portofolio jadi beberapa kolom.
+   ========================================================= */
+@media (min-width: 720px) {
+  .header { padding: 18px calc((100% - 960px) / 2 + 16px) 12px; }
+  main { max-width: 960px; margin: 0 auto; }
+  .section { padding: 32px 16px; }
+  .hero-text p { font-size: 17px; max-width: 520px; }
+  .hero-role { font-size: 22px; }
+  .hero-photo { width: 240px; }
+  .about-text { font-size: 16px; max-width: 720px; }
+  .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* hormati pengguna yang mematikan animasi */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
